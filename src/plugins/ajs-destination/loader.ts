@@ -16,7 +16,7 @@ function normalizeName(name: string): string {
 function recordLoadMetrics(fullPath: string, ctx: Context, name: string): void {
   try {
     const [metric] =
-      global.window?.performance?.getEntriesByName(fullPath, 'resource') ?? []
+      window?.performance?.getEntriesByName(fullPath, 'resource') ?? []
     // we assume everything that took under 100ms is cached
     metric &&
       ctx.stats.gauge('legacy_destination_time', Math.round(metric.duration), [

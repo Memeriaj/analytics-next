@@ -33,7 +33,7 @@ const deprecationWarning =
 
 // reference any pre-existing "analytics" object so a user can restore the reference
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const globalAny: any = global
+const globalAny: any = {};
 const _analytics = globalAny.analytics
 
 export interface AnalyticsSettings {
