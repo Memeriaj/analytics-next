@@ -17,7 +17,8 @@
     "run-example": "cd example && yarn && yarn dev",
     "clean": "rm -rf dist",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "prepare": "yarn bundle"
+    "prepare": "yarn bundle",
+    "release": "np"
   },
   "publishConfig": {
     "access": "public"
