@@ -1,3 +1,11 @@
+## Why is it forked?
+
+Forked from [the original repo](https://github.com/segmentio/analytics-next) to fix some issues that our JS bundler was running into due to the way that the code in this repo was getting bundled. Luckily there was already [a PR](https://github.com/segmentio/analytics-next/pull/319) for [the `process` issue](https://github.com/segmentio/analytics-next/issues/303) which [we merged](https://github.com/shortwave/analytics-next/commit/5faebee32b98061c35726ecb374a80ca8fc890b8) as well as [some suggestions](https://github.com/segmentio/analytics-next/issues/325#issuecomment-967786925) for [the `global` issue](https://github.com/segmentio/analytics-next/issues/325) as well which are in [this commit](https://github.com/shortwave/analytics-next/commit/ddab92380e8f95d6409415a6a4bf8073feaca704).
+
+## Releasing
+
+To release a new version [to NPM](https://www.npmjs.com/package/@shortwave/analytics-next) of this forked repo run `npm run release` which will step you through the process. You will need to have an NPM account and be a part of the Shortwave org however.
+
 # Analytics Next
 
 Analytics Next (aka Analytics 2.0) is the latest version of Segment’s JavaScript SDK - enabling you to send your data to any tool without having to learn, test, or use a new API every time.
@@ -29,7 +37,7 @@ The easiest and quickest way to get started with Analytics 2.0 is to [use it thr
 1. Install the package
 
 ```sh
-# npm 
+# npm
 npm install @segment/analytics-next
 
 # yarn
@@ -87,7 +95,7 @@ export default App
 
 ### using `Vite` with `Vue 3`
 
-1. add to `vite.config.ts` 
+1. add to `vite.config.ts`
 
 ```ts
   define: {
@@ -120,10 +128,9 @@ export const useSegment = () => {
     analytics,
   })
 }
-
 ```
 
-3. in component 
+3. in component
 
 ```vue
 <template>
@@ -137,20 +144,18 @@ import { useSegment } from './services/segment'
 export default defineComponent({
   setup() {
     const { analytics } = useSegment()
-    
-    function track() { 
+
+    function track() {
       analytics?.track('Hello world')
     }
-    
+
     return {
-      track
+      track,
     }
-  }
+  },
 })
 </script>
-
 ```
-
 
 # 🐒 Development
 
